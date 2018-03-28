@@ -19,10 +19,6 @@ public class TP2 {
         Auto auto = new Auto("ARZ123",1996,"Oreon","Ford",15.2,2.2,35.3);
         Mecanico mecanico= new Mecanico("Juan","Perez",35);
         auto.addObserver(mecanico);
-        System.out.println("Los valores del auto "+ auto.getPatente() + " son: ");
-        System.out.println("Nivel de agua: "+ auto.getNivelAgua());
-        System.out.println("Nivel de aceite: "+ auto.getNivelAceite());
-        System.out.println("Presion de neumaticos:  "+ auto.getPresionNeumaticos());
         auto.setNivelAceite(45.3);        
     }
     

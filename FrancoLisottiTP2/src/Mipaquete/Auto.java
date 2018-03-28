@@ -11,7 +11,7 @@ import java.util.Observable;
  *
  * @author usuario
  */
-public class Auto extends Observable{
+public class Auto extends Observable implements Cloneable{
     String patente;
     int anio;
     String modelo;
@@ -68,9 +68,15 @@ public class Auto extends Observable{
     }
 
     public void setNivelAceite(double nivelAceite) {
-        this.nivelAceite = nivelAceite;
-        setChanged();
-        notifyObservers(nivelAceite);
+    	try {
+			Object nuevo = this.clone();
+			this.nivelAceite = nivelAceite;
+	        setChanged();
+	        notifyObservers(nuevo);
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}    	
     }
 
     public double getPresionNeumaticos() {
@@ -78,9 +84,15 @@ public class Auto extends Observable{
     }
 
     public void setPresionNeumaticos(double presionNeumaticos) {
-        this.presionNeumaticos = presionNeumaticos;
-        setChanged();
-        notifyObservers(presionNeumaticos);
+		try {
+			Object nuevo = this.clone();
+			this.presionNeumaticos = presionNeumaticos;
+			setChanged();
+	        notifyObservers(nuevo);
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     public double getNivelAgua() {
@@ -88,9 +100,15 @@ public class Auto extends Observable{
     }
 
     public void setNivelAgua(double nivelAgua) {
-        this.nivelAgua = nivelAgua;
-        setChanged();
-        notifyObservers(nivelAgua);
+    	try {
+    		Object nuevo= this.clone();
+			this.nivelAgua = nivelAgua;
+	        setChanged();
+	        notifyObservers(nuevo);
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     

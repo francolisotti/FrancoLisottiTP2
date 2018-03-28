@@ -51,11 +51,16 @@ public class Mecanico implements Observer{
     public void update(Observable o, Object arg) {
     	 if (o instanceof Auto) {
     	        Auto auto = (Auto) o;
-    	        System.out.println("Los valores del auto "+ auto.getPatente()+ " han cambiado a: ");
+    	        Auto viejo = (Auto) arg;
+    	        System.out.println("Los valores del auto "+ viejo.getPatente()+ " eran: ");
+    	        System.out.println("Nivel de agua: "+ viejo.getNivelAgua());
+    	        System.out.println("Nivel de aceite: "+ viejo.getNivelAceite());
+    	        System.out.println("Presion de neumaticos:  "+ viejo.getPresionNeumaticos());
+    	        
+    	        System.out.println("\nLos valores del auto "+ auto.getPatente()+ " han cambiado a: ");
     	        System.out.println("Nivel de agua: "+ auto.getNivelAgua());
     	        System.out.println("Nivel de aceite: "+ auto.getNivelAceite());
     	        System.out.println("Presion de neumaticos:  "+ auto.getPresionNeumaticos());
-    	        System.out.println(arg);
     	    }
     }
     
