@@ -53,9 +53,9 @@ public class Mecanico implements Observer{
     	        Auto auto = (Auto) o;
     	        Auto viejo = (Auto) arg;
     	        System.out.println("Los valores del auto "+ viejo.getPatente()+ " viejos / nuevos: ");
-    	        System.out.println("Nivel de agua: "+ viejo.getNivelAgua()+" / "+auto.getNivelAgua());
-    	        System.out.println("Nivel de aceite: "+ viejo.getNivelAceite()+" / "+auto.getNivelAceite());
-    	        System.out.println("Presion de neumaticos:  "+ viejo.getPresionNeumaticos()+" / "+auto.getPresionNeumaticos());
+    	        System.out.println("Nivel de agua: ------------- "+ viejo.getNivelAgua()+" / "+auto.getNivelAgua());
+    	        System.out.println("Nivel de aceite: ----------- "+ viejo.getNivelAceite()+" / "+auto.getNivelAceite());
+    	        System.out.println("Presion de neumaticos: ----- "+ viejo.getPresionNeumaticos()+" / "+auto.getPresionNeumaticos());
     	        
     	        /*System.out.println("\nLos valores del auto "+ auto.getPatente()+ " han cambiado a: ");
     	        System.out.println("Nivel de agua: "+ auto.getNivelAgua());
