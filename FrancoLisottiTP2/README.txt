@@ -1,0 +1,7 @@
+Cliclo de ejecución de los métodos del patrón utilizado:
+Al cambiar un valor del objeto observable, en dicha función (por ejemplo setValue()) se deberá primero cambiar dicho valor para luego llamar a los métodos setChanged() y notifyObservers() en ese orden. El método setChanged() marca el objeto observable como un objeto que ha cambiado. El método notifyObservers() (que dentro de su código utiliza la funcion boolean hasChanged() que le devolverá true solo si hemos ejecutado setChanged()) notificará a todos los Observers para que hagan uso de su funcion con @override update(), y luego ejecutará clearChanged() para volver a setear el valor de que ha cambiado en false.
+
+
+
+Argumentos que pasan por update(): Observer contiene un único método de nombre update, que recibe dos parámetros: la instancia del objeto observable sobre la que se ha producido el evento y un Object a modo de argumento que el objeto observable envía, el cual puede ser el valor viejo de lo que ha cambiado, o una copia anterior a dicho cambio, ya que al ser un objeto Object nos da la libertad de decidirlo.
+El método update() se llama dentro de la función notifyObservers del objeto observable. La clase Observable posee una lista de todos los observers de la clase que extiende de ella. Itera a cada uno de ellos y llama a su método update, pasandole por parámetro el objeto que ha sufrido una modificación, y un Object a modo de argumento.
