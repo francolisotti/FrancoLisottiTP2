@@ -1,0 +1,2 @@
+-Persistencia utilizada: JDBC con MySQL. Se utilizó esta persistencia para complementar con el temario de Programación Avanzada I.
+-No se le agregó dificultad al trabajo.
